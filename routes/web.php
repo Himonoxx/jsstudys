@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::resource('/', 'JsstudysController');
+Route::get('/upload', 'JsstudysController@uplload_page')->name('jsstudys.upload');
+Route::get('/photolib','JsstudysController@photolib')->name('jsstudys.photolib');

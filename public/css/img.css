@@ -1,0 +1,10 @@
+.box6 {
+    padding: 0.5em 1em;
+    margin: auto;
+    background: #f0f7ff;
+    border: dashed 2px #5b8bd0;/*点線*/
+}
+.box6 p {
+    margin: 0; 
+    padding: 0;
+}

@@ -1,0 +1,151 @@
+@media screen and (max-width: 480px) {
+  main {
+    width: 100vw;
+    height: 30vh;
+    padding: 0;
+  }
+
+  main section #itemA {
+    width: 25vw;
+    padding-top: 0;
+  }
+
+  main section #itemB {
+    width: 25vw;
+  }
+
+  main section #itemC {
+    width: 25vw;
+  }
+
+  main section #itemD {
+    width: 25vw;
+  }
+
+  main section #itemE {
+    width: 25vw;
+  }
+
+  main section h1 {
+    font-size: 30px;
+  }
+
+  main section p.note {
+    color: #f00;
+  }
+
+  main section ul {
+    padding-left: 0;
+  }
+
+  main section ul li {
+    border-bottom: 1px solid #666;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 781px) {
+  main {
+    width: 100vw;
+    height: 30vh;
+    margin: 5px;
+    padding: 0;
+  }
+
+  main section {
+    margin: 5px;
+  }
+
+  main section #itemA {
+    width: 90vw;
+    padding-top: 0;
+  }
+
+  main section #itemB {
+    width: 75vw;
+  }
+
+  main section #itemC {
+    width: 75vw;
+  }
+
+  main section #itemD {
+    width: 75vw;
+  }
+
+  main section #itemE {
+    width: 75vw;
+  }
+
+  main section h1 {
+    font-size: 30px;
+  }
+
+  main section p.note {
+    color: #f00;
+  }
+
+  main section ul {
+    padding-left: 0;
+  }
+
+  main section ul li {
+    border-bottom: 1px solid #666;
+  }
+}
+
+@media screen and (min-width: 782px) {
+  .flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  main {
+    width: 100vw;
+    height: 30vh;
+    margin: 5px;
+    padding: 0;
+  }
+
+  main section {
+    margin: 5px;
+  }
+
+  main section #itemA {
+    width: 25vw;
+    padding-top: 0;
+  }
+
+  main section #itemB {
+    width: 75vw;
+  }
+
+  main section #itemC {
+    width: 75vw;
+  }
+
+  main section #itemD {
+    width: 75vw;
+  }
+
+  main section #itemE {
+    width: 75vw;
+  }
+
+  main section h1 {
+    font-size: 30px;
+  }
+
+  main section p.note {
+    color: #f00;
+  }
+
+  main section ul {
+    padding-left: 0;
+  }
+
+  main section ul li {
+    border-bottom: 1px solid #666;
+  }
+}
+

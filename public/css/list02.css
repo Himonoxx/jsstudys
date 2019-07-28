@@ -1,0 +1,22 @@
+.msr_list02 li {
+  font-size: 13px;
+  padding-bottom: 5px;
+  list-style: none; 
+  padding:0;
+  padding-left: 0;
+}
+
+/* アイコン */
+.msr_list02 li:before {
+  background-color: #1B73BA;
+  content: "";
+  display: inline-block;
+  height: 8px;
+  margin-right: 10px;
+  transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 8px;
+  padding:0;
+}
+    
