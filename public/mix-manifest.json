@@ -2,5 +2,8 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/test.css": "/css/test.css",
-    "/css/upload.css": "/css/upload.css"
+    "/css/upload.css": "/css/upload.css",
+    "/css/omikuji.css": "/css/omikuji.css",
+    "/css/typing.css": "/css/typing.css",
+    "/css/toppage.css": "/css/toppage.css"
 }

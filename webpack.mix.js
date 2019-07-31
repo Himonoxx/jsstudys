@@ -14,4 +14,7 @@ let mix = require('laravel-mix');
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css')
    .sass('resources/assets/sass/test.scss', 'public/css')
-   .sass('resources/assets/sass/upload.scss', 'public/css');
+   .sass('resources/assets/sass/upload.scss', 'public/css')
+   .sass('resources/assets/sass/omikuji.scss', 'public/css')
+   .sass('resources/assets/sass/typing.scss', 'public/css')
+   .sass('resources/assets/sass/toppage.scss', 'public/css');

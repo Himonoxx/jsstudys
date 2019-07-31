@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Jsstudy;
 
 use Illuminate\Http\Request;
+use Storage;
 
 class JsstudysController extends Controller
 {
@@ -83,14 +85,51 @@ class JsstudysController extends Controller
         //
     }
     
-    public function uplload_page()
+    public function upload_page()
     {
-        return view('jsstudys.upload');
+        
+        $jsstudy=new Jsstudy;
+        return view('jsstudys.upload',[
+            'jsstudy' => $jsstudy
+            ]);
+        
+        
     }
     
     public function photolib()
     {
-       return view('jsstudys.photolib'); 
+        $jsstudys=Jsstudy::all();
+        
+       return view('jsstudys.photolib',[
+           'jsstudys'=>$jsstudys
+           ]); 
        
+    }
+    
+    public function upload(Request $request)
+    {
+        
+        $file=$request->file('file');
+        $path=Storage::disk('s3')->putFile('/',$file,'public');
+        $imagep=Storage::disk('s3')->url($path);
+        $request->user()->jsstudys()->create([
+            'imagepath' => $imagep,
+            'user_id' => $request->user()->id
+            ]);
+        
+        
+        return view('jsstudys.upload');
+        
+        
+    }
+    
+    public function omikuji()
+    {
+        return view('jsstudys.omikuji');
+    }
+    
+    public function typing()
+    {
+        return view('jsstudys.typing');
     }
 }

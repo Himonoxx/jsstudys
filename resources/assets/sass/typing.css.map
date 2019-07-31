@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,OAAO;EACH,UAAU,EAAC,MAAM;EACjB,SAAS,EAAE,IAAI;;AAGnB,KAAK;EACD,UAAU,EAAC,MAAM;EACjB,SAAS,EAAE,GAAG;EACd,OAAO,EAAE,GAAG",
+"sources": ["typing.scss"],
+"names": [],
+"file": "typing.css"
+}

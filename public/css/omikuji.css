@@ -1,0 +1,30 @@
+#omikuji-submit {
+  background: #ef454a;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 42px;
+  color: #fff;
+  border-radius: 50%;
+  margin: 30px auto 0;
+  line-height: 200px;
+  cursor: pointer;
+  -webkit-box-shadow: 0 10px 0 #d1483e;
+          box-shadow: 0 10px 0 #d1483e;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#omikuji-submit.pressed {
+  -webkit-box-shadow: 0 5px 0 #d1483e;
+          box-shadow: 0 5px 0 #d1483e;
+  margin: 35px auto 0;
+}
+
+#omikuji-submit:hover {
+  opacity: 0.9;
+}
+

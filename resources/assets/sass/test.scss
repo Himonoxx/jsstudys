@@ -1,45 +1,62 @@
-$base-witdh: 25vw;
+$base-witdh: 20vw;
 $sub-width: 100vw - $base-witdh;
 $height: 25%;
 
-$resp_width:25vw;
+$resp_width: 100vw;
 
 
-@media screen and (max-width:480px){
+
+@media screen and (min-width:481px) and (max-width:767px){
     
-    main{
-    width: 100vw;
-    height:30vh;
-    padding:0;
+     main{
+    
+    section{
+        margin:5px;
+        .resp{
+            width:$resp_width;
+        }
+            
+        h1{
+            font-size: 30px;
+            
+        }
+        
+        
+        p.note{
+            color: #f00;
+        }
+        
+        ul{
+            padding-left:0;
+            li{
+                border-bottom:1px solid #666;
+            }
+        }
+        
+        
+    }
+}
+    
+}
+
+@media screen and (min-width:767px){
+    
+    .flex{
+        display:flex;
+    }
+
+main{
     
     section{
             
             #itemA{
-                width: $resp_width;
+                width: $base-witdh;
                 padding-top: 0;
             }
             
-            #itemB{
-                width: $resp_width;
-                
-            }
-            
-            #itemC{
-                width: $resp_width;
-                
-                
-            }
-            
-            #itemD{
-                width: $resp_width;
-                
-            }
-            
-            #itemE{
-                width: $resp_width;
-                
-            }
-        
+            #resp{
+            width:$sub-width;
+        }
         
         h1{
             font-size: 30px;
@@ -61,13 +78,9 @@ $resp_width:25vw;
         
     }
 }
-
-
-
-
-    
 }
-@media screen and (min-width:481px) and (max-width:781px){
+
+@media screen and (min-width:1024px) and (max-width:1367px){
     
      main{
     width: 100vw;
@@ -77,35 +90,11 @@ $resp_width:25vw;
     
     section{
         margin:5px;
+        #resp{
+            width:$resp_width;
+
+        }
             
-            #itemA{
-                width: 90vw;
-                padding-top: 0;
-                
-            }
-            
-            #itemB{
-                width: $sub-width;
-                
-            }
-            
-            #itemC{
-                width: $sub-width;
-                
-                
-            }
-            
-            #itemD{
-                width: $sub-width;
-                
-            }
-            
-            #itemE{
-                width: $sub-width;
-                
-            }
-        
-        
         h1{
             font-size: 30px;
             
@@ -127,72 +116,4 @@ $resp_width:25vw;
     }
 }
     
-}
-
-@media screen and (min-width:782px){
-    
-    .flex{
-        display:flex;
-    }
-
-main{
-    width: 100vw;
-    height:30vh;
-    margin: 5px;
-    padding:0;
-    
-    section{
-        margin:5px;
-        .col-2{
-            
-        }
-            
-            #itemA{
-                width: $base-witdh;
-                padding-top: 0;
-            }
-            
-            #itemB{
-                width: $sub-width;
-                
-            }
-            
-            #itemC{
-                width: $sub-width;
-                
-                
-            }
-            
-            #itemD{
-                width: $sub-width;
-                
-            }
-            
-            #itemE{
-                width: $sub-width;
-                
-            }
-        
-        
-        h1{
-            font-size: 30px;
-            
-        }
-        
-        
-        p.note{
-            color: #f00;
-        }
-        
-        ul{
-            padding-left:0;
-            li{
-                border-bottom:1px solid #666;
-            }
-        }
-        
-        
-    }
-}
-
 }
