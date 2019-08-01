@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="css/nav.css">
         <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/button.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
     </head>
 

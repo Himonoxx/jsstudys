@@ -20,6 +20,11 @@ Route::get('/photolib','JsstudysController@photolib')->name('jsstudys.photolib')
 Route::get('/omikuji','JsstudysController@omikuji')->name('jsstudys.omikuji');
 Route::get('/typing','JsstudysController@typing')->name('jsstudys.typing');
 
+Route::get('/post/store','PostsController@store')->name('posts.get');
+Route::post('/post/store','PostsController@store')->name('posts.store');
+
+
+
 
 Route::get('login','Auth\LoginController@showLoginForm')->name('login');
 Route::post('login','Auth\LoginController@login')->name('login.post');

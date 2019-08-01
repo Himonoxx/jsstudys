@@ -6,6 +6,7 @@ use App\Jsstudy;
 use Illuminate\Http\Request;
 use Storage;
 use App\User;
+use App\Post;
 
 class JsstudysController extends Controller
 {
@@ -16,7 +17,20 @@ class JsstudysController extends Controller
      */
     public function index()
     {
-       
+        if(\Auth::check()){
+            $post_create = new Post;
+            
+            $user=\Auth::user()->id;
+            $posts=User::find($user)->posts()->orderBy('id', 'desc')->paginate(5);
+            
+        
+            return view('jsstudys.index',[
+            'posts' => $posts,
+            'posts_create' => $post_create
+            ]);
+            
+        }
+        
         return view('jsstudys.index');
     }
 
@@ -27,7 +41,8 @@ class JsstudysController extends Controller
      */
     public function create()
     {
-        //
+        
+        
     }
 
     /**
@@ -49,7 +64,7 @@ class JsstudysController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

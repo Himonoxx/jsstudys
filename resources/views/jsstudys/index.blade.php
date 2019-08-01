@@ -29,12 +29,30 @@
                     </div>
                     <div id="itemD">
                         <div class="kakomi-box12">
-                            <span class="title-box12">タイトル</span>準備中
+                            <span class="title-box12">一言メモ</span>
+                                {!! Form::open(['route' => 'posts.store']) !!}
+                                <div class="form-group parentb">
+                                {!! Form::textarea('memo', old('memo'), ['class' => 'form-control', 'rows' => '2']) !!}
+                                {!! Form::submit('Tweet', ['class' => 'btn-brackets childb', 'style' => 'witdh:auto;','id'=>'btn-hv']) !!}
+                                {!! Form::close() !!}
+                                </div>
                         </div>
                     </div>
                     <div id="itemE">
                         <div class="kakomi-box12">
-                            <span class="title-box12">簡易メモアプリ</span>メモが投稿できる機能を実装中です。
+                                <span class="title-box12">最近の一言</span>
+                                @if($posts->count() < 0)
+                                    <h1 style="text-align:center;">----Nothing posts---</h1>
+                                @else
+                                    @foreach($posts as $post)
+                                    <ul>
+                                        <b>Tweet: </b><li style="text-align:center;">「 {{ $post->memo }} 」</li>
+                                    </ul>
+                                    @endforeach
+                                @endif
+                                <div>
+                                    {{ $posts->render('pagination::bootstrap-4') }}
+                                </div>
                         </div>
                     </div>
                 </div>

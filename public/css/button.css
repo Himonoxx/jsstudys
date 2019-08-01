@@ -1,33 +1,16 @@
-.btn-brackets {
+.parentb {
+  text-align: center;
+}
+
+.parentb .childb {
   display: inline-block;
-  position: relative;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  color: #000;
-  transition: .4s;
-  margin:10px;
+  width: 100%;
+  font-size: 20px;
+  background-color: #5EBABA;
+  color: #F5F5F5;
 }
-.btn-brackets:hover {
-  color:#ff7f7f;
+
+.parentb #btn-hv:hover {
+  opacity: 0.8;
 }
-.btn-brackets:before, .btn-brackets:after {
-  position: absolute;
-  top: 0;
-  content:'';
-  width: 8px;
-  height: 100%;
-  display: inline-block;
-}
-.btn-brackets:before {
-  border-left: solid 1px #ff7f7f;
-  border-top: solid 1px #ff7f7f;
-  border-bottom: solid 1px #ff7f7f;
-  left: 0;
-}
-.btn-brackets:after {
-  content: '';
-  border-top: solid 1px #ff7f7f;
-  border-right: solid 1px #ff7f7f;
-  border-bottom: solid 1px #ff7f7f;
-  right: 0;
-}
+
