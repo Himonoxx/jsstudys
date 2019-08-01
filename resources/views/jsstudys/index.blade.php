@@ -59,9 +59,9 @@
             </div>
         @else
         <div id="toppage">
-            <h1 id="message">Welcome!!</h1>
-            {!! link_to_route('signup.get', 'Sign up now!', [], ['id' => 'btn-signup','class'=>'btn-brackets','style'=>'text-decoration:none;']) !!}
-            {!! link_to_route('login', 'Login', [], ['id' => 'btn-login','class'=>'btn-brackets','style'=>'text-decoration:none;']) !!}
+            <h1 id="message" style="margin-bottom:30px; margin-top:0px;">JavaScript Study.</h1>
+            <span style="font-size:20px; margin:10px;">{!! link_to_route('signup.get', 'Sign up', [], ['id' => 'btn-signup','class'=>'btn-brackets','style'=>'text-decoration:none;']) !!}</span>
+            <span style="font-size:20px; margin:10px;">{!! link_to_route('login', 'Login', [], ['id' => 'btn-login','class'=>'btn-brackets','style'=>'text-decoration:none;']) !!}</span>
         </div>
         @endif
     </section>
