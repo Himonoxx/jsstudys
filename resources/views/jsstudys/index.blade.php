@@ -19,12 +19,12 @@
                 <div id="resp">
                     <div id="itemB">
                         <div class="kakomi-box12">
-                            <span class="title-box12">今後やりたいこと</span>フォトライブラリを作成、画像をクリックするとモーダル化してメッセージが表示される。
+                            <span class="title-box12">今後やりたいこと</span>フォトライブラリに一言メモを入れられるようにしたい。
                         </div>
                     </div>
                     <div id="itemC">
                         <div class="kakomi-box12">
-                            <span class="title-box12">タイトル</span>準備中
+                            <span class="title-box12">Typing Game Ranking</span>ここにユーザーごとのランキングを載せる予定。
                         </div>
                     </div>
                     <div id="itemD">
@@ -41,7 +41,7 @@
             </div>
         @else
         <div id="toppage">
-            <h1>Welcome!!</h1>
+            <h1 id="message">Welcome!!</h1>
             {!! link_to_route('signup.get', 'Sign up now!', [], ['id' => 'btn-signup','class'=>'btn-brackets','style'=>'text-decoration:none;']) !!}
             {!! link_to_route('login', 'Login', [], ['id' => 'btn-login','class'=>'btn-brackets','style'=>'text-decoration:none;']) !!}
         </div>

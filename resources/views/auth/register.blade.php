@@ -9,6 +9,8 @@
     <div>
         
     {!! Form::open(['route' => 'signup.post']) !!}
+    
+    <div style="margin:auto; text-align:center; width:25vw;">
         <div id="fg-name">
             {!! Form::label('name','Name') !!}
             {!! Form::text('name',old('name')) !!}
@@ -25,9 +27,11 @@
             {!! Form::label('password_confirmation','password_confirmation') !!}
             {!! Form::password('password_confirmation') !!}
         </div>
+    
         
         {!! Form::submit('Sign up',['id' => 'submit-button']) !!}
     {!! Form::close() !!}
+    </div>
         
     </div>
 

@@ -5,6 +5,7 @@ use App\Jsstudy;
 
 use Illuminate\Http\Request;
 use Storage;
+use App\User;
 
 class JsstudysController extends Controller
 {
@@ -98,7 +99,8 @@ class JsstudysController extends Controller
     
     public function photolib()
     {
-        $jsstudys=Jsstudy::all();
+        $user=\Auth::user()->id;
+        $jsstudys=Jsstudy::all()->where('user_id',$user);
         
        return view('jsstudys.photolib',[
            'jsstudys'=>$jsstudys
