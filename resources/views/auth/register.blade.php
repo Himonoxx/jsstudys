@@ -5,32 +5,24 @@
     <p class="form-title">Sign Up</p>
     {!! Form::open(['route' => 'signup.post']) !!}
     <div style="width:100%;">
-        <div style="width:auto; margin-bottom:0;">
-            {!! Form::label('name','Name') !!}
-        </div>
-        <div id="mail" style="width:100%;">
-            {!! Form::text('name',old('name')) !!}
+        <div id="name" class="name" name="name" style="width:auto; margin-bottom:0;">
+            {!! Form::label('name','Name', ['class'=>'name-l']) !!}
+            {!! Form::text('name',old('name'), ['class'=>'name']) !!}
         </div>
         
-        <div style="width:auto; margin-bottom:0;">
-            {!! Form::label('email','Email') !!}
-        </div>
-        <div class="mail" name="mail" id="mail">
-            {!! Form::text('email',old('email')) !!}
+        <div id="mail" class="mail" name="mail" style="width:auto; margin-bottom:0;">
+            {!! Form::label('email','Email', ['class'=>'em-l']) !!}
+            {!! Form::text('email',old('email'),['class'=>'em']) !!}
         </div>
         
-        <div style="width:auto; margin-bottom:0;">
-            {!! Form::label('password','Password') !!}
-        </div>
-        <div class="pass" name="pass" id="pass">
-            {!! Form::password('password') !!}
+        <div class="pass" name="pass" id="pass" style="width:auto; margin-bottom:0;">
+            {!! Form::label('password','Password',['class'=>'pass-l']) !!}
+            {!! Form::password('password',['class'=>'pass']) !!}
         </div>
         
-        <div style="width:auto; margin-bottom:0;">
-            {!! Form::label('password_confirmation','Confirm') !!}
-        </div>
-        <div class="pass" name="pass" id="pass">
-            {!! Form::password('password_confirmation') !!}
+        <div class="pass" name="pass" id="pass" style="width:auto; margin-bottom:0;">
+            {!! Form::label('password_confirmation','Confirm',['class'=>'pass-l']) !!}
+            {!! Form::password('password_confirmation',['class'=>'pass']) !!}
         </div>
     </div>
         

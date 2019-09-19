@@ -10,10 +10,10 @@
                 <div id="itemA" class="kakomi-box12">
                     <h4>Main Menu</h4>
                     <ul class="msr_list02">
-                        <h5><li>{!! link_to_route('jsstudys.upload_page','File Upload',[],['style'=>'text-decoration:none;']) !!}</li></h5>
-                        <h5><li>{!! link_to_route('jsstudys.photolib','Photo Liblary',[],['style'=>'text-decoration:none;']) !!}</li></h5>
-                        <h5><li>{!! link_to_route('jsstudys.omikuji','おみくじ',[],['style'=>'text-decoration:none;']) !!}</li></h5>
-                        <h5><li>{!! link_to_route('jsstudys.typing','Typing Game',[],['style'=>'text-decoration:none;']) !!}</li></h5>
+                        <h5><li class="">{!! link_to_route('jsstudys.upload_page','File Upload',[],['style'=>'text-decoration:none;']) !!}</li></h5>
+                        <h5><li>{!! link_to_route('jsstudys.photolib','Photo Liblary',['class'=>'btn-animation-02'],['style'=>'text-decoration:none;']) !!}</li></h5>
+                        <h5><li>{!! link_to_route('jsstudys.omikuji','おみくじ',['class'=>'btn-animation-02'],['style'=>'text-decoration:none;']) !!}</li></h5>
+                        <h5><li>{!! link_to_route('jsstudys.typing','Typing Game',['class'=>'btn-animation-02'],['style'=>'text-decoration:none;']) !!}</li></h5>
                     </ul>
                 </div>
                 <div id="resp">
@@ -40,15 +40,20 @@
                     </div>
                     <div id="itemE">
                         <div class="kakomi-box12">
-                                <span class="title-box12">最近の一言</span>
+                                <span class="title-box12">みんなの一言</span>
                                 @if($posts->count() < 0)
                                     <h1 style="text-align:center;">----Nothing posts---</h1>
                                 @else
-                                    @foreach($posts as $post)
                                     <ul>
-                                        <b>Tweet: </b><li style="text-align:center;">「 {{ $post->memo }} 」</li>
+                                      @foreach($posts as $post)
+                                        @if($post->user_id !== \Auth::user()->id)
+                                          <b>Tweet: {!! link_to_route('users.show',$post->user->name,['id'=>$post->user->id],['class'=>'btn-open2','style'=>'text-decoration: none;']) !!}</b><li style="text-align:center;">「 {{ $post->memo }} 」   {{ $post->created_at->format('Y/m/d H:i') }}</li>
+                                        @else
+                                          <b>Tweet: {!! link_to_route('users.show',$post->user->name,['id'=>$post->user->id],['class'=>'btn-open','style'=>'text-decoration: none;']) !!}</b><li style="text-align:center;">「 {{ $post->memo }} 」   {{ $post->created_at->format('Y/m/d H:i') }}</li>
+                                        @endif
+                                      @endforeach
                                     </ul>
-                                    @endforeach
+                                    
                                 @endif
                                 <div>
                                     {{ $posts->render('pagination::bootstrap-4') }}

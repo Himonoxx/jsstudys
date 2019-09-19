@@ -19,14 +19,17 @@ class JsstudysController extends Controller
     {
         if(\Auth::check()){
             $post_create = new Post;
+            $all_users = User::all();
             
-            $user=\Auth::user()->id;
-            $posts=User::find($user)->posts()->orderBy('id', 'desc')->paginate(5);
+            $user=\Auth::user();
+            $posts=$user->feed_posts()->orderBy('created_at', 'desc')->paginate(5);
             
         
             return view('jsstudys.index',[
             'posts' => $posts,
-            'posts_create' => $post_create
+            'posts_create' => $post_create,
+            'user'=>$user,
+            'all_users'=>$all_users,
             ]);
             
         }

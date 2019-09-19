@@ -8,10 +8,12 @@
                 id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
             </li>
         @if(Auth::check())
+          <li class="luxbar-item">{!! link_to_route('users.index','Users',['style'=>'text-decoration:none;']) !!}</li>
           <li class="luxbar-item">{!! link_to_route('jsstudys.upload_page','File Upload',[],['style'=>'text-decoration:none;']) !!}</li>
           <li class="luxbar-item">{!! link_to_route('jsstudys.photolib','Photo Liblary',[],['style'=>'text-decoration:none;']) !!}</li>
           <li class="luxbar-item">{!! link_to_route('jsstudys.omikuji','おみくじ',[],['style'=>'text-decoration:none;']) !!}</li>
           <li class="luxbar-item">{!! link_to_route('jsstudys.typing','Typing Game',[],['style'=>'text-decoration:none;']) !!}</li>
+          <li class="luxbar-item">{!! link_to_route('users.show',Auth::user()->name,['id'=>Auth::user()->id],['style'=>'text-decoration:none;']) !!}</li>
           <li class="luxbar-item">{!! link_to_route('logout.get','Logout',['style'=>'text-decoration:none;']) !!}</li>
         @else
           <li class="luxbar-item">{!! link_to_route('login','Login',['style'=>'text-decoration:none;']) !!}</li>
