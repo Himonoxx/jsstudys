@@ -20,7 +20,6 @@ class CreateTableSvl12000 extends Migration
             $table->string('mean');
             $table->string('term');
             $table->integer('level');
-            $table->timestamps();
         });
     }
 
