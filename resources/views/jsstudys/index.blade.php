@@ -170,18 +170,18 @@
                                     <th><i class="fa fa-user-circle"></i> Followings</th>
                                   </tr>
                                 </thead>
-                                <?php $follow_users = $post->user->followings()->paginate(3); ?>
-                                @if( empty($follow_users) )
-                                  <h4>Nothing follow users.</h4>
+                                <?php $follower_users = $post->user->followers()->paginate(3); ?>
+                                @if( empty($follower_users) )
+                                  <h4>Nothing follower users.</h4>
                                 @else
-                                  @foreach($follow_users as $user)
+                                  @foreach($follower_users as $user)
                                     <tr>
                                       <td><i class="far fa-user"></i> {{ $user->name }}</td>
                                       <td>{{ $user->followers()->count() }}</td>
                                       <td>{{ $user->followings()->count() }}</td>
                                     </tr>
                                   @endforeach
-                                  {{ $follow_users->render('pagination::bootstrap-4') }}
+                                  {{ $follower_users->render('pagination::bootstrap-4') }}
                                 @endif
                               </table>
                             </div>
@@ -198,18 +198,18 @@
                                     <th><i class="fa fa-user-circle"></i> Followings</th>
                                   </tr>
                                 </thead>
-                                <?php $follower_users = $post->user->followers()->paginate(3); ?>
-                                @if( empty($follower_users) )
-                                  <h4>Nothing follower users.</h4>
+                                <?php $follow_users = $post->user->followings()->paginate(3); ?>
+                                @if( empty($follow_users) )
+                                  <h4>Nothing following users.</h4>
                                 @else
-                                  @foreach($follower_users as $user2)
+                                  @foreach($follow_users as $user2)
                                     <tr>
                                       <td><i class="far fa-user"></i> {{ $user2->name }}</td>
                                       <td>{{ $user2->followers()->count() }}</td>
                                       <td>{{ $user2->followings()->count() }}</td>
                                     </tr>
                                   @endforeach
-                                  {{ $follower_users->render('pagination::bootstrap-4') }}
+                                  {{ $follow_users->render('pagination::bootstrap-4') }}
                                 @endif
                               </table>
                             </div>
