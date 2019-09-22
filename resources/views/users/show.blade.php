@@ -3,11 +3,18 @@
 
 @section('content')
 <div class="row">
-  <div class="col-sm-10 offset-1">
+  <div class="col-sm-10 offset-1 section section-tabs">
     <div class="panel panel-default">
         <div class="panel-heading"><h3>User Profile</h3></div>
         <div class="panel-body">
-            <div class="list-group">
+            <table>
+              <header>
+                <tr>
+                  <th>UserName</th>
+                  <th>Email</th>
+                  
+                </tr>
+              </header>
                 <li class="list-group-item">UserName: {{ $user->name }}</li>
                 <li class="list-group-item">Email: {{ $user->email }}</li>
                 <li class="list-group-item">Tweet<br>

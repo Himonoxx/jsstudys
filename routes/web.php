@@ -13,6 +13,7 @@
 
 
 Route::resource('/', 'JsstudysController');
+Route::get('/tests', 'JsstudysController@tests')->name('jsstudys.tests');
 Route::get('/upload_page', 'JsstudysController@upload_page')->name('jsstudys.upload_page');
 Route::post('/upload', 'JsstudysController@upload')->name('jsstudys.upload');
 Route::get('/upload', 'JsstudysController@upload')->name('jsstudys.upload');

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Storage;
 use App\User;
 use App\Post;
+use App\Word;
+
 
 class JsstudysController extends Controller
 {
@@ -19,7 +21,7 @@ class JsstudysController extends Controller
     {
         if(\Auth::check()){
             $post_create = new Post;
-            $all_users = User::all();
+            $all_users = User::orderBy('created_at','desc')->paginate(10);
             
             $user=\Auth::user();
             $posts=$user->feed_posts()->orderBy('created_at', 'desc')->paginate(5);
@@ -150,6 +152,16 @@ class JsstudysController extends Controller
     
     public function typing()
     {
-        return view('jsstudys.typing');
+        $words = Word::all();
+        foreach($words as $word){
+            $words_eng[$word->word] = $word->mean;
+        }
+        $words_eng = json_encode($words_eng);
+        return view('jsstudys.typing',['words_eng'=>$words_eng]);
+    }
+    
+    public function tests(){
+        
+        return view('jsstudys.tests');
     }
 }

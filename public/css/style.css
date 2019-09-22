@@ -107,3 +107,22 @@ img {
 		width:12.5%;
 	}
 }
+
+body {
+ margin: 0;
+ padding: 0;
+ background: #fff;
+}
+.links {
+ margin: 100px;
+ text-align: center;
+}
+img {
+ vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+.links {
+ margin: 50px 10px;
+}
+}

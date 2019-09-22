@@ -1,0 +1,12 @@
+body:before{
+    background-color: #1C1C1C;
+    background-size: cover;
+    /* 自由に位置指定 */
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    content: ' ';
+    opacity:0.6;
+}

@@ -1,14 +1,16 @@
 'use strict';
 
 {
-    
-    const words = ["apple",'sky','middle','hoge','blue','orange','tommy'];
-    let word = words[Math.floor(Math.random()*words.length)];
+    const words = $data;
+    var keys = Object.keys($data);
+    var word = keys[Math.floor(Math.random()*keys.length)];
+    var mean = $data[word];
     const target = document.getElementById('target');
     const scoreLabel = document.getElementById('score');
     const missLabel = document.getElementById('miss');
     const timerLabel = document.getElementById('timer');
-    const timelimit = 5*1000;
+    const meanLabel = document.getElementById('mean');
+    const timelimit = 60*1000;
     
     let loc = 0;
     let score = 0;
@@ -23,7 +25,7 @@
     }
     
     function updateTarget(){
-        
+        meanLabel.textContent = $data[word]; 
         let placeholder = '';
         for(let i = 0 ; i<loc ; i++){
             placeholder += '_';
@@ -48,6 +50,7 @@
             },100);
             
             timerLabel.textContent='0.00';
+            meanLabel.textContent='';
             target.textContent = 'Click to replay.';
         }
         
@@ -62,9 +65,12 @@
         loc = 0;
         score = 0;
         miss = 0;
+        mean='';
         scoreLabel.textContent = score;
         missLabel.textContent = miss;
-        word = words[Math.floor(Math.random()*words.length)];
+        meanLabel.textContent = mean
+        word = keys[Math.floor(Math.random()*keys.length)];
+        mean = $data[word];
         
         isPlaying = true;
         updateTarget();
@@ -79,7 +85,9 @@
         if(e.key === word[loc]){
             loc++;
             if(loc === word.length){
-                word = words[Math.floor(Math.random()*words.length)];
+                word = keys[Math.floor(Math.random()*keys.length)];
+                mean = $data[word];
+                meanLabel.textContent = mean
                 loc = 0;
             }
             score++;
