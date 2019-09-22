@@ -17,7 +17,7 @@ $(function(){
                 "style":"width:100%;"
                 
             });
-            $("#submit").html('<div style="text-align:center;"><h4 class="btn-brackets" style="text-decoration:none;"><input type="submit" value=UPLOAD THIS PICTURE></h4></div>')
+            $("#submit").html('<div style="text-align:center;"><h4 style="text-decoration:none;"><input class="btn btn-default btn-block" type="submit" value=UPLOAD></h4></div>')
             $("#up_comment").text('<<Preview>>');
         };
         

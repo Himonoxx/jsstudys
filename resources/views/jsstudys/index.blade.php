@@ -89,7 +89,7 @@
                                         @else
                                           @foreach($all_users as $list_user)
                                             <tr>
-                                              <td><i class="far fa-user"></i> {{ $list_user->name }}</td>
+                                              <td><i class="far fa-user"></i> {!! link_to_route('users.show',$list_user->name, ['id'=>$list_user->id, 'style'=>'text-decoration: none;']) !!}</td>
                                               <td>{{ $list_user->followers()->count() }}</td>
                                               <td>{{ $list_user->followings()->count() }}</td>
                                             </tr>
