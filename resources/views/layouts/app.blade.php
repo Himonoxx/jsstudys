@@ -16,11 +16,11 @@
         <link rel="stylesheet" href="css/upload.css">
         <link rel="stylesheet" href="css/img.css">
         <link rel="stylesheet" href="css/button.css">
-        @if(request()->path() == 'jsstudys.omikuji')
+        @if(request()->path() == 'omikuji')
           <link rel="stylesheet" href="css/omikuji.css">
           <link rel="stylesheet" href="css/result_box.css">
         @endif
-        @if(request()->path() == 'jsstudys.typing')
+        @if(request()->path() == 'typing')
           <link rel="stylesheet" href="css/typing.css">
         @endif
         <link rel="stylesheet" href="css/toppage.css">
@@ -42,12 +42,9 @@
         <link href="now_ui/demo/demo.css" rel=stylesheet>
         <link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
         <link href="css/tweet_form.css" rel=stylesheet>
-        @if(request()->path() == ('login' or '/'))
-          @if(Auth::check() and (request()->path() == '/'))
-            <link rel="stylesheet" href="css/opac_img.css">
-          @endif
-          <link rel="stylesheet" href="css/topimg.css">
-        @endif
+        <link rel="stylesheet" href="css/topimg.css">
+        {{-- flash_message --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
         {{-- Super box --}}
     </head>
 
@@ -59,6 +56,11 @@
         
         <div class="box">
             @include('commons.error_messages')
+            @if (session('flash_messages'))
+              <div class="flash_message bg-success text-center py-3 my-0">
+                  {{ session('flash_messages') }}
+              </div>
+            @endif
             
             @yield('content')
         </div>
@@ -69,10 +71,10 @@
         <script src="js/preview.js"></script>
         <script src="js/lightgallery.min.js"></script>
         <script src="js/test.js"></script>
-        @if(request()->path() == 'jsstudys.omikuji')
+        @if(request()->path() == 'omikuji')
           <script src="js/omikuji.js"></script>
         @endif
-        @if(request()->path() == 'jsstudys.typing')
+        @if(request()->path() == 'typing')
           <script src="js/typing.js"></script>
         @endif
         <script src="js/nav.js"></script>
@@ -92,5 +94,7 @@
           <script src="now_ui/js/now-ui-kit.js?v=1.3.0" type="text/javascript"></script>
           {{-- Super Box --}}
           <script src="js/superbox.js"></script>
+          {{-- flash_message --}}
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     </body>
 </html>

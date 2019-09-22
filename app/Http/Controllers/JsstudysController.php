@@ -140,7 +140,7 @@ class JsstudysController extends Controller
             ]);
         
         
-        return view('jsstudys.upload');
+        return view('jsstudys.upload')->with('flash_messages','正常にアップロードが完了しました。');
         
         
     }
