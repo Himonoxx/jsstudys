@@ -17,8 +17,8 @@ class CreateTableSvl12000 extends Migration
             $table->increments('id');
             $table->integer('groupid');
             $table->string('word');
-            $table->string('mean');
             $table->string('term');
+            $table->string('mean');
             $table->integer('level');
         });
     }
