@@ -114,7 +114,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fab fa-twitter"></i></span>
                       </div>
-                      <input type="text" class="form-control" name="memo" placeholder="Left Font Awesome Icon">
+                      <input type="text" class="form-control" name="memo" placeholder="Tweet Your Mind.">
                     </div>
                       <button class="btn btn-primary btn-round btn-block" type="submit" name="add"><i class="fas fa-envelope"></i> Post</button>
                     </form>
